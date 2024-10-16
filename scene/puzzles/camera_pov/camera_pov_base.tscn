@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://mly8bnrw75r0"]
+
+[ext_resource type="PackedScene" uid="uid://bsaq37cddb4qb" path="res://scene/puzzles/camera_pov/camera2d_pov.tscn" id="3_c3lc0"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1154, 596.003)
+scale = Vector2(13.125, 10.4688)
+
+[node name="Camera2D" parent="." instance=ExtResource("3_c3lc0")]
+position = Vector2(968.003, 545.003)

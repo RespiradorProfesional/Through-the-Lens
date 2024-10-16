@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=3 uid="uid://bsaq37cddb4qb"]
+
+[ext_resource type="Script" path="res://scripts/puzzles/camera_pov/camera_2d_pov.gd" id="1_8h4h5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jv77y"]
+radius = 365.859
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gkmid"]
+size = Vector2(1339, 716.5)
+
+[node name="Camera2D" type="Camera2D"]
+limit_smoothed = true
+script = ExtResource("1_8h4h5")
+
+[node name="limit_right" type="Marker2D" parent="."]
+position = Vector2(1592, 0)
+
+[node name="limit_left" type="Marker2D" parent="."]
+position = Vector2(-1479, 3)
+
+[node name="limit_top" type="Marker2D" parent="."]
+position = Vector2(-125, -846)
+
+[node name="limit_bottom" type="Marker2D" parent="."]
+position = Vector2(-119, 834)
+
+[node name="light_area" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="light_area"]
+shape = SubResource("CircleShape2D_jv77y")
+
+[node name="captured_area" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="captured_area"]
+position = Vector2(-2, -0.75)
+shape = SubResource("RectangleShape2D_gkmid")
+
+[node name="captured_timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="area_entered" from="light_area" to="." method="_on_light_area_area_entered"]
+[connection signal="area_entered" from="captured_area" to="." method="_on_captured_area_area_entered"]
+[connection signal="timeout" from="captured_timer" to="." method="_on_captured_timer_timeout"]

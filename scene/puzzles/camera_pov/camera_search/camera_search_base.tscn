@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6ft43on4bwpb"]
+
+[ext_resource type="PackedScene" uid="uid://mly8bnrw75r0" path="res://scene/puzzles/camera_pov/camera_pov_base.tscn" id="1_cdx7d"]
+[ext_resource type="Script" path="res://scripts/puzzles/camera_pov/camera_search/camera_search_base.gd" id="2_k5ino"]
+
+[node name="Node2D" instance=ExtResource("1_cdx7d")]
+script = ExtResource("2_k5ino")
+
+[connection signal="area_detected_light" from="Camera2D" to="." method="_on_camera_2d_area_detected_light"]

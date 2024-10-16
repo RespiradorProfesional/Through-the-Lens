@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://jwrtawvmn681"]
+
+[ext_resource type="PackedScene" uid="uid://bmsxwn66dxpwk" path="res://scene/puzzles/camera_pov/camera_monster/camera_monster_base.tscn" id="1_otcib"]
+[ext_resource type="PackedScene" uid="uid://cden7fvwi3uyu" path="res://scene/puzzles/camera_pov/camera_monster/monster_base.tscn" id="2_p5cdm"]
+
+[node name="Node2D" instance=ExtResource("1_otcib")]
+
+[node name="Node2D" parent="." index="2" instance=ExtResource("2_p5cdm")]
+position = Vector2(939, 1209)

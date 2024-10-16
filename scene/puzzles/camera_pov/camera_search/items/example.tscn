@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://ml8s3qcwyvhq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ke2jq"]
+radius = 47.8539
+
+[node name="Area2D" type="Area2D"]
+visible = false
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ke2jq")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -25.0
+offset_top = -36.0
+offset_right = 32.0
+offset_bottom = 33.0
+theme_override_font_sizes/font_size = 50
+text = "12"
