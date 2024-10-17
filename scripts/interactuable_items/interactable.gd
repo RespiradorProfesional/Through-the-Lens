@@ -3,6 +3,7 @@ class_name Interactable
 
 @export var new_route : String
 var body_in_interact=false
+@onready var label_interact= $label_interact
 
 func _process(delta: float) -> void:
 	if body_in_interact:
@@ -11,10 +12,13 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player:
+		label_interact.visible=true
 		body_in_interact=true
 
 func _on_body_exited(body: Node2D) -> void:
-	body_in_interact=false
+	if body is Player:
+		label_interact.visible=false
+		body_in_interact=false
 
 #Sustituir interact si no habre una nueva escena
 

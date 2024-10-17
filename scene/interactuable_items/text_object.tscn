@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://dni57v4sk4n43"]
+
+[ext_resource type="PackedScene" uid="uid://cu2fnvc8sq73n" path="res://scene/interactuable_items/interactable.tscn" id="1_k65om"]
+[ext_resource type="Script" path="res://scripts/interactuable_items/text_object.gd" id="2_6n5i1"]
+
+[node name="Area2D" instance=ExtResource("1_k65om")]
+script = ExtResource("2_6n5i1")
+dialogic_route = ""

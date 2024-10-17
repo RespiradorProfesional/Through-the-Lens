@@ -1,0 +1,51 @@
+[gd_scene load_steps=3 format=3 uid="uid://iqudfaceoeec"]
+
+[ext_resource type="PackedScene" uid="uid://cu2fnvc8sq73n" path="res://scene/interactuable_items/interactable.tscn" id="1_bakxg"]
+[ext_resource type="Script" path="res://scripts/puzzles/code_board/door_with_code.gd" id="2_q6isb"]
+
+[node name="Area2D" instance=ExtResource("1_bakxg")]
+script = ExtResource("2_q6isb")
+texture_door = null
+texture_panel = null
+code = ""
+
+[node name="panel_code" type="Control" parent="." index="2"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="panel_code" index="0"]
+layout_mode = 0
+offset_left = -4271.0
+offset_top = -2168.0
+offset_right = 5083.0
+offset_bottom = 2710.0
+color = Color(0, 0, 0, 0.215686)
+
+[node name="ColorRect2" type="ColorRect" parent="panel_code" index="1"]
+layout_mode = 0
+offset_left = -508.0
+offset_top = -157.0
+offset_right = 479.0
+offset_bottom = 164.0
+color = Color(0, 0, 0.882353, 1)
+
+[node name="TextEdit" type="TextEdit" parent="panel_code" index="2"]
+layout_mode = 0
+offset_left = -346.0
+offset_top = -96.0
+offset_right = 350.0
+offset_bottom = 13.0
+theme_override_font_sizes/font_size = 70
+placeholder_text = "PASSWORD"
+
+[node name="Button" type="Button" parent="panel_code" index="3"]
+layout_mode = 0
+offset_left = -62.0
+offset_top = 78.0
+offset_right = 64.0
+offset_bottom = 126.0
+
+[connection signal="pressed" from="panel_code/Button" to="." method="_on_button_pressed"]
