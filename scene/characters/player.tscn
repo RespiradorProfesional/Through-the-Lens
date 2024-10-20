@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cqsfcikqfiaj2"]
+[gd_scene load_steps=6 format=3 uid="uid://cqsfcikqfiaj2"]
 
 [ext_resource type="Script" path="res://scripts/characters/player.gd" id="1_wmtra"]
 [ext_resource type="PackedScene" uid="uid://gx56gj30aymb" path="res://scene/characters/camera2d_player.tscn" id="2_qqm51"]
+[ext_resource type="Texture2D" uid="uid://dc5iuytnquykv" path="res://assets/texturas/pxArt_light_triangule.png" id="3_ccg5a"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_llpip"]
 radius = 23.0
@@ -28,6 +29,13 @@ rotation = 1.5708
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="lintern"]
 shape = SubResource("CapsuleShape2D_22sa6")
+
+[node name="PointLight2D" type="PointLight2D" parent="lintern"]
+texture_filter = 1
+position = Vector2(-20, -1.99993)
+rotation = 2.9147
+scale = Vector2(0.808823, 0.90712)
+texture = ExtResource("3_ccg5a")
 
 [node name="light_right_marker" type="Marker2D" parent="."]
 position = Vector2(190, 0)

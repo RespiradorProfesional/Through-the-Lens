@@ -42,6 +42,60 @@ shape = SubResource("RectangleShape2D_gkmid")
 [node name="captured_timer" type="Timer" parent="."]
 one_shot = true
 
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -968.0
+offset_top = -546.0
+offset_right = -928.0
+offset_bottom = -506.0
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 0
+offset_right = 296.0
+offset_bottom = 1104.0
+color = Color(0, 0, 0, 0.207843)
+
+[node name="ColorRect" type="ColorRect" parent="Control/ColorRect"]
+layout_mode = 0
+offset_left = 1634.0
+offset_top = 1.0
+offset_right = 1930.0
+offset_bottom = 1105.0
+color = Color(0, 0, 0, 0.207843)
+
+[node name="ColorRect2" type="ColorRect" parent="Control/ColorRect"]
+layout_mode = 0
+offset_left = 296.0
+offset_top = 903.0
+offset_right = 1634.0
+offset_bottom = 1171.0
+color = Color(0, 0, 0, 0.207843)
+
+[node name="ColorRect3" type="ColorRect" parent="Control/ColorRect"]
+layout_mode = 0
+offset_left = 296.0
+offset_top = -81.0
+offset_right = 1634.0
+offset_bottom = 187.0
+color = Color(0, 0, 0, 0.207843)
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 1446.0
+offset_top = 935.0
+offset_right = 1486.0
+offset_bottom = 958.0
+text = "PHOTO_CAPTURED"
+
+[node name="Label2" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 1446.0
+offset_top = 979.0
+offset_right = 1592.0
+offset_bottom = 1002.0
+text = "PHOTO_FLASH"
+
 [connection signal="area_entered" from="light_area" to="." method="_on_light_area_area_entered"]
 [connection signal="area_entered" from="captured_area" to="." method="_on_captured_area_area_entered"]
 [connection signal="timeout" from="captured_timer" to="." method="_on_captured_timer_timeout"]

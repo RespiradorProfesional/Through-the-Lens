@@ -5,7 +5,7 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(1154, 596.003)
+position = Vector2(1469, 588)
 scale = Vector2(13.125, 10.4688)
 
 [node name="Camera2D" parent="." instance=ExtResource("3_c3lc0")]

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://clac6fvt0hl1w"]
+
+[ext_resource type="PackedScene" uid="uid://cu2fnvc8sq73n" path="res://scene/interactuable_items/interactable.tscn" id="1_p440w"]
+
+[node name="Area2D" instance=ExtResource("1_p440w")]
+change_total_scene = true

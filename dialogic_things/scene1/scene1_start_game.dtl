@@ -1,0 +1,3 @@
+SCENE1_START_GAME
+SCENE1_START_GAME_2
+[signal arg="finish_dialogue"]

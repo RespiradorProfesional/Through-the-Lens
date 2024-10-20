@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://b2dre0d2d3u0d"]
+
+[ext_resource type="Script" path="res://scripts/levels/scene_3_cave.gd" id="1_hhpn1"]
+[ext_resource type="PackedScene" uid="uid://cu2fnvc8sq73n" path="res://scene/interactuable_items/interactable.tscn" id="2_3r8p6"]
+[ext_resource type="PackedScene" uid="uid://dni57v4sk4n43" path="res://scene/interactuable_items/text_object.tscn" id="3_bwriq"]
+[ext_resource type="PackedScene" uid="uid://cqsfcikqfiaj2" path="res://scene/characters/player.tscn" id="4_tgs7u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nsobg"]
+size = Vector2(4314, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8nrfn"]
+size = Vector2(89, 283)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_hhpn1")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1261, 5)
+shape = SubResource("RectangleShape2D_nsobg")
+
+[node name="Area2D" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_3r8p6")]
+position = Vector2(-78, -93)
+new_route = "res://scene/puzzles/camera_pov/camera_monster/cam_monst_scenes/inmovil_cam/cam_cueva_1.tscn"
+player = NodePath("../Player")
+
+[node name="Area2D2" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_bwriq")]
+position = Vector2(288, -91)
+dialogic_route = "res://dialogic_things/scene3/scene3_montana_muelto.dtl"
+player = NodePath("../Player")
+
+[node name="play_animation" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="play_animation"]
+position = Vector2(657.5, -131.5)
+shape = SubResource("RectangleShape2D_8nrfn")
+
+[node name="Player" parent="." instance=ExtResource("4_tgs7u")]
+position = Vector2(-413, -125)
+
+[connection signal="body_entered" from="play_animation" to="." method="_on_play_animation_body_entered"]

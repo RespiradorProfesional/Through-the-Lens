@@ -1,13 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://iqudfaceoeec"]
+[gd_scene load_steps=4 format=3 uid="uid://iqudfaceoeec"]
 
 [ext_resource type="PackedScene" uid="uid://cu2fnvc8sq73n" path="res://scene/interactuable_items/interactable.tscn" id="1_bakxg"]
 [ext_resource type="Script" path="res://scripts/puzzles/code_board/door_with_code.gd" id="2_q6isb"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fpryj"]
+size = Vector2(46, 184)
+
 [node name="Area2D" instance=ExtResource("1_bakxg")]
 script = ExtResource("2_q6isb")
-texture_door = null
-texture_panel = null
 code = ""
+door_close_texture = null
+door_open_texture = null
 
 [node name="panel_code" type="Control" parent="." index="2"]
 visible = false
@@ -47,5 +50,15 @@ offset_left = -62.0
 offset_top = 78.0
 offset_right = 64.0
 offset_bottom = 126.0
+
+[node name="door" type="Sprite2D" parent="." index="3"]
+
+[node name="machine" type="Sprite2D" parent="." index="4"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" index="0"]
+position = Vector2(961, -1)
+shape = SubResource("RectangleShape2D_fpryj")
 
 [connection signal="pressed" from="panel_code/Button" to="." method="_on_button_pressed"]

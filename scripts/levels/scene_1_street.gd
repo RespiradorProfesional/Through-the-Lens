@@ -1,13 +1,10 @@
-extends Interactable
+extends Base_level
 
-@export var dialogic_route : String
 
-func _ready() -> void:
+func new_ready():
 	Dialogic.signal_event.connect(on_dialogic_signal)
-
-func interact():
+	Dialogic.start("res://dialogic_things/scene1/scene1_start_game.dtl")
 	player.set_physics_process(false)
-	Dialogic.start(dialogic_route)
 
 
 func on_dialogic_signal(argument: String):

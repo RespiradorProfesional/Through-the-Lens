@@ -20,8 +20,11 @@ func _ready() -> void:
 	
 	captured_area.set_deferred("monitoring", false)
 
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_cancel"):
+		print(GlobalData.scene_player)
+		get_tree().change_scene_to_file(GlobalData.scene_player)
 
-func _process(delta):
 	if light_area.visible and Input.is_action_just_pressed("light_button"):
 		light_area.visible=false
 		light_area.set_deferred("monitoring", false)
@@ -32,7 +35,9 @@ func _process(delta):
 	if Input.is_action_just_pressed("ui_accept"):
 		captured_area.set_deferred("monitoring", true)
 		$captured_timer.start()
-	
+
+func _process(delta):
+
 	var direction = Vector2.ZERO
 	# Capturamos el input del jugador para mover la cámara
 	if Input.is_action_pressed("ui_left"):

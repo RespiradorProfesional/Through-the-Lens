@@ -1,10 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://b4yrcicplr5qr"]
+[gd_scene load_steps=6 format=3 uid="uid://b4yrcicplr5qr"]
 
 [ext_resource type="PackedScene" uid="uid://cqsfcikqfiaj2" path="res://scene/characters/player.tscn" id="1_pd5b2"]
 [ext_resource type="PackedScene" uid="uid://cu2fnvc8sq73n" path="res://scene/interactuable_items/interactable.tscn" id="2_daule"]
 [ext_resource type="PackedScene" uid="uid://iqudfaceoeec" path="res://scene/puzzles/code_board/door_with_code.tscn" id="3_p281v"]
 [ext_resource type="PackedScene" uid="uid://dni57v4sk4n43" path="res://scene/interactuable_items/text_object.tscn" id="4_wqkdd"]
-[ext_resource type="PackedScene" uid="uid://bsr8dyv631htj" path="res://scene/characters/monster_chase.tscn" id="5_lk6jx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d3tp5"]
 size = Vector2(4314, 30)
@@ -26,17 +25,13 @@ new_route = "res://scene/puzzles/camera_pov/camera_monster/cam_monst_scenes/inmo
 
 [node name="Area2D3" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_p281v")]
 position = Vector2(435, -102)
-player = NodePath("../CharacterBody2D")
 code = "123"
+player = NodePath("../CharacterBody2D")
 
 [node name="Area2D2" parent="." instance=ExtResource("2_daule")]
 position = Vector2(1250, -108)
 new_route = "res://scene/puzzles/camera_pov/camera_search/cam_srch_scenes/example_scene.tscn"
 
-[node name="Area2D4" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_wqkdd")]
-position = Vector2(68, -48)
+[node name="Area2D4" parent="." instance=ExtResource("4_wqkdd")]
+position = Vector2(66, -91)
 dialogic_route = "res://dialogic_things/test.dtl"
-player = NodePath("../CharacterBody2D")
-
-[node name="CharacterBody2D2" parent="." instance=ExtResource("5_lk6jx")]
-position = Vector2(-595, -197)
