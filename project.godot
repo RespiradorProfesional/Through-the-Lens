@@ -26,6 +26,7 @@ directories/dtl_directory={
 "scene1_door_party": "res://dialogic_things/scene1/scene1_door_party.dtl",
 "scene1_start_game": "res://dialogic_things/scene1/scene1_start_game.dtl",
 "scene2_code": "res://dialogic_things/scene1/scene2_code.dtl",
+"scene3_montana_bad_state": "res://dialogic_things/scene3/scene3_montana_bad_state.dtl",
 "scene3_montana_muelto": "res://dialogic_things/scene3/scene3_montana_muelto.dtl",
 "test": "res://dialogic_things/test.dtl"
 }

@@ -11,7 +11,7 @@ func exit_cam():
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name=="photo_realized":
-		get_tree().change_scene_to_file("res://scene/test/test_level.tscn")
+		get_tree().change_scene_to_file(GlobalData.scene_player)
 
 func _on_camera_2d_area_detected_light(area: Area2D) -> void:
 	if area is Monster:

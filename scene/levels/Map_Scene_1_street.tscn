@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxdxaidhh55tp"]
+
+[ext_resource type="Texture2D" uid="uid://ca8r8lgc18n38" path="res://assets/texturas/lluvia_texture.png" id="1_p7tj4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t3qei"]
+size = Vector2(4314, 30)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -1045.0
+offset_top = -1163.0
+offset_right = 4529.0
+offset_bottom = 1041.0
+color = Color(0.788316, 0.422808, 0.265632, 1)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1261, 5)
+shape = SubResource("RectangleShape2D_t3qei")
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+color = Color(0.252028, 0.252028, 0.252028, 1)
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(720, -903)
+emitting = false
+amount = 1000
+lifetime = 1.4
+texture = ExtResource("1_p7tj4")
+emission_shape = 3
+emission_rect_extents = Vector2(10000, 1)

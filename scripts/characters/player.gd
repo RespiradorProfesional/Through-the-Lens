@@ -5,6 +5,7 @@ const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 @onready var lintern=$lintern
 @onready var lintern_light=$lintern/PointLight2D
+@onready var camera2d=$Camera2D
 var light_active=false
 
 func _physics_process(delta: float) -> void:
